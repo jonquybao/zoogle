@@ -1,1 +1,131 @@
-<center><h2>Calendar</h2></center>
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 999;
+}
+</style>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="./pages/brothers/brothers.html">Brothers</a>
+  <a href="./pages/companies/companies.html">Companies</a>
+  <a href="./pages/news/news.html">News</a>
+    <a href="./pages/calendar/calendar.html">Calendar</a>
+</div>
+
+<div id="main">
+	<span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  	<div class="container">
+
+  		<div class="row">
+			<iframe src="https://calendar.google.com/calendar/embed?title=All%20Zeta%20Calendar&amp;height=550&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=7o1s46vcn5i2jgekrj3sodrb8g%40group.calendar.google.com&amp;color=%2323164E&amp;src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&amp;color=%232952A3&amp;src=l27tsvnj6bsgd9hnnucf781pcc%40group.calendar.google.com&amp;color=%23853104&amp;src=km4o8os6brkochc060biu0rvvo%40group.calendar.google.com&amp;color=%235F6B02&amp;src=n02cqfpjaad1o09lhv1e2g6nic%40group.calendar.google.com&amp;color=%23AB8B00&amp;src=5vvo75ks6i06k0nk4qqa44otcs%40group.calendar.google.com&amp;color=%23853104&amp;src=gsk27idkoghbvp873i63s0ming%40group.calendar.google.com&amp;color=%23AB8B00&amp;src=662q6j4jt7lnj4tmmlb6vt3i50%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FLos_Angeles" style="border-width: 0" width="100%" height="550" frameborder="0" scrolling="no"></iframe>
+ 	 	</div>
+
+
+  		<div class="row">
+    		<div class="col-sm-12"> 
+				<div id="main-content">
+				</div>
+    		</div>
+ 	 	</div>
+	</div>
+ 
+</div>
+
+<script>
+
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+
+
+$(document).ready(function(){
+  $("#main-content").load('./pages/brothers/brothers.html');
+
+  $('a').click(function(e){
+     e.preventDefault();
+     $("#main-content").load($(this).attr('href'));
+     closeNav();
+  });
+});
+</script>
+     
+</body>
+</html> 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 999;
+}
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="./pages/brothers/brothers.html">Brothers</a>
+  <a href="./pages/companies/companies.html">Companies</a>
+  <a href="./pages/news/news.html">News</a>
+    <a href="./pages/calendar/calendar.html">Calendar</a>
+</div>
+
+<div id="main">
+	<span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  	<div class="container">
+  		<div class="row">
+    		<div class="col-sm-12"> 
+				<div id="main-content">
+					<div class="tab">
+					  <button class="tablinks" onclick="openCity(event, 'Alpha')">Alpha Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Beta')">Beta Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Gamma')">Gamma Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Delta')">Delta Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Zeta')">Zeta Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Eta')">Eta Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Theta')">Theta Chapter</button>
+					  <button class="tablinks" onclick="openCity(event, 'Iota')">Iota Chapter</button>
+					</div>
+
+					<div id="Alpha" class="tabcontent">
+					
+					  <iframe src="https://calendar.google.com/calendar/embed?src=7o1s46vcn5i2jgekrj3sodrb8g%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+
+					<div id="Beta" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="550" frameborder="0" scrolling="no"></iframe>
+					</div>
+
+					<div id="Gamma" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div id="Delta" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div id="Zeta" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div id="Eta" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div id="Theta" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div id="Iota" class="tabcontent">
+					  <iframe src="https://calendar.google.com/calendar/embed?src=as382cijh1l00ep8g9sdadmvjs%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+    		</div>
+ 	 	</div>
+	</div>
+ 
+</div>
+
+<script>
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+
+
+$(document).ready(function(){
+  $("#main-content").load('./pages/brothers/brothers.html');
+
+  $('a').click(function(e){
+     e.preventDefault();
+     $("#main-content").load($(this).attr('href'));
+     closeNav();
+  });
+});
+</script>
+     
+</body>
+</html> 
